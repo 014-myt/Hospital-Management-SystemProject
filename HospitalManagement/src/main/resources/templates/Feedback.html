@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Hospital Management System</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link"th:href="@{/get/new}">Register user</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Doctors List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Book appointment</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">Admin</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+    <div class="container">
+    <div class="row">
+    <h1> UserList</h1>
+    <div class="row">
+    <div class="col-lg-3">
+    
+    </div>
+    </div>
+      <table class="table table-striped table-bordered">
+      <thead class="table-dark">
+      <tr>
+      <th>User Name</th>
+      <th>User email</th>
+      <th>user Update</th>
+     <tr>
+      </thead>
+      <tbody>
+      <tr th:each="admins:${Admin}">
+      <td th:text ="${admins.email}"></td>
+      <td th:text ="${admins.name}"></td>
+      <td> 
+>        <a th:href="@{get/update/{id}(id=${admins.id})}"
+          class="btn btn-primary">Update</a> 
+          <td>
+           <a th:href="@{get/delete/{id}(id=${admins.id})}"
+          class="btn btn-danger">delete</a>     
+          </td>    
+          </tr>
+      </tbody>
+      </table>
+      </div>
+</body>
+</html>
