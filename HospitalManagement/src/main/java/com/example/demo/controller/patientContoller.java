@@ -10,10 +10,9 @@ import com.example.demo.model.Admin;
 import com.example.demo.model.Patient;
 import com.example.demo.serviceImp.AdminService;
 import com.example.demo.serviceImp.PatientService;
-@Entity
+
 public class patientContoller {
 	private PatientService obj1;
-@Id
 	public patientContoller(PatientService obj1) {
 		super();
 		this.obj1 = obj1;
