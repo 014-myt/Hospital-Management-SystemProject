@@ -1,6 +1,8 @@
 package com.example.demo.model;
 
+@Entity
 public class Patient {
+	@Id
 	long patientId;
 	String patientname;
 	String bloodgroup;
